@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hodpital.AdminController">
+    <children>
+        <BorderPane fx:id="sidebar" prefWidth="294.0" style="-fx-background-color: #263F73FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <VBox maxWidth="1.7976931348623157E308" style="-fx-background-color: #263F73FF;" BorderPane.alignment="TOP_LEFT">
+                    <children>
+                        <Text fill="WHITE" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MEDIX">
+                            <font>
+                                <Font name="Arial Bold" size="54.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="514.0" prefWidth="309.0">
+                            <children>
+                                <Button fx:id="btnDashboard" alignment="TOP_LEFT" graphicTextGap="7.0" onAction="#handleDashboardBtn" prefHeight="52.0" prefWidth="293.0" style="-fx-background-color: transparent;" text="Dashboard" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="fas-chart-bar" iconSize="25" /></graphic>
+                                </Button>
+
+                                <Button fx:id="btnUsers" alignment="TOP_LEFT" graphicTextGap="8.0" onAction="#handleUserManagementBtn" prefHeight="52.0" prefWidth="297.0" style="-fx-background-color: transparent;" text="User Management" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="fas-user-friends" iconSize="25" /></graphic>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </Button>
+
+                                <Button fx:id="btnPatients" alignment="TOP_LEFT" graphicTextGap="13.0" onAction="#handlePatientsBtn" prefHeight="52.0" prefWidth="293.0" style="-fx-background-color: transparent;" text="Patients" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="fas-user" iconSize="25" /></graphic>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </Button>
+
+                                <Button fx:id="btnAppointments" alignment="TOP_LEFT" graphicTextGap="18.0" onAction="#handleAppointmentsBtn" prefHeight="52.0" prefWidth="297.0" style="-fx-background-color: transparent;" text="Appointments" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="far-calendar-alt" iconSize="25" /></graphic>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </Button>
+                                <Button fx:id="btnMedicalRecords" alignment="TOP_LEFT" graphicTextGap="21.0" onAction="#handleMedicalRecordsBtn" prefHeight="52.0" prefWidth="297.0" style="-fx-background-color: transparent;" text="Medical Records" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="far-file-alt" iconSize="25" /></graphic>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </Button>
+                                <Button fx:id="btnRooms" alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#handleRoomsBtn" prefHeight="52.0" prefWidth="297.0" style="-fx-background-color: transparent;" text="Room Management" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="fas-procedures" iconSize="25" /></graphic>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </Button>
+                                <Button fx:id="btnBilling" alignment="TOP_LEFT" graphicTextGap="30.0" onAction="#handleBillingBtn" prefHeight="52.0" prefWidth="297.0" style="-fx-background-color: transparent;" text="Billing" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="fas-dollar-sign" iconSize="25" /></graphic>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </Button>
+                                <Button fx:id="btnInventory" alignment="TOP_LEFT" graphicTextGap="21.0" onAction="#handleInventoryBtn" prefHeight="52.0" prefWidth="297.0" style="-fx-background-color: transparent;" text="Inventory" textFill="WHITE">
+                                    <font><Font size="25.0" /></font>
+                                    <graphic><FontIcon iconColor="WHITE" iconLiteral="fas-cube" iconSize="25" /></graphic>
+                                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                                </Button>
+                            </children>
+                            <padding><Insets left="-9.0" right="-1.0" /></padding>
+                        </VBox>
+                    </children>
+                    <padding><Insets left="9.0" /></padding>
+                </VBox>
+            </top>
+        </BorderPane>
+
+        <AnchorPane fx:id="rightSideContainer" layoutX="294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="70.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <padding><Insets left="5.0" right="5.0" /></padding>
+                    <effect><DropShadow height="10.0" radius="4.5" width="10.0"><color><Color opacity="0.2" /></color></DropShadow></effect>
+                    <children>
+                        <Button fx:id="menuBtn" mnemonicParsing="false" onAction="#toggleSidebar" style="-fx-background-color: white;">
+                            <graphic><SVGPath content="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" /></graphic>
+                        </Button>
+                        <Label fx:id="lblPageTitle" text="Hospital System">
+                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                            <font><Font name="Arial Bold" size="27.0" /></font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <VBox alignment="CENTER_RIGHT" prefWidth="211.0">
+                            <children>
+                                <Label fx:id="lblAdminName"><font><Font name="Arial" size="21.0" /></font></Label>
+                                <Label text="Administrator" textFill="GREY"><font><Font name="Arial" size="15.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <Button fx:id="Logout" mnemonicParsing="false" onAction="#LogoutAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #D32F2F; -fx-background-radius: 5;" text="Logout" textFill="WHITE">
+                            <font><Font name="Arial Bold" size="18.0" /></font>
+                            <graphic><FontIcon iconColor="WHITE" iconLiteral="fas-sign-out-alt" iconSize="18" /></graphic>
+                            <HBox.margin><Insets left="10.0" /></HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+
+                <StackPane fx:id="mainContentArea" layoutY="70.0" prefHeight="650.0" prefWidth="986.0" style="-fx-background-color: #f0f2f5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

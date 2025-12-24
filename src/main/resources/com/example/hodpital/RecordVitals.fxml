@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefWidth="550.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hodpital.RecordVitalsController">
+    <children>
+        <VBox spacing="5.0">
+            <children>
+                <Label text="Record Vital Signs" style="-fx-font-weight: bold; -fx-font-size: 18;" />
+                <Label fx:id="lblPatientHeader" text="Robert Smith - P001" textFill="#64748b" />
+            </children>
+        </VBox>
+
+        <Separator />
+
+        <GridPane hgap="20.0" vgap="15.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+            </columnConstraints>
+            <children>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Blood Pressure (mmHg)" textFill="#64748b" style="-fx-font-size: 13;" />
+                        <TextField fx:id="txtBP" promptText="120/80" style="-fx-background-radius: 8; -fx-padding: 10;" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="Temperature (°F)" textFill="#64748b" style="-fx-font-size: 13;" />
+                        <TextField fx:id="txtTemp" promptText="98.6" style="-fx-background-radius: 8; -fx-padding: 10;" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Heart Rate (bpm)" textFill="#64748b" style="-fx-font-size: 13;" />
+                        <TextField fx:id="txtHeartRate" promptText="72" style="-fx-background-radius: 8; -fx-padding: 10;" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Weight (lbs)" textFill="#64748b" style="-fx-font-size: 13;" />
+                        <TextField fx:id="txtWeight" promptText="165" style="-fx-background-radius: 8; -fx-padding: 10;" />
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+
+        <VBox spacing="5.0">
+            <children>
+                <Label text="Observations / Notes" textFill="#64748b" style="-fx-font-size: 13;" />
+                <TextArea fx:id="txtNotes" prefHeight="100.0" promptText="Enter any observations or concerns..." style="-fx-background-radius: 8; -fx-padding: 10;" wrapText="true" />
+            </children>
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <children>
+                <Button onAction="#handleCancel" prefWidth="100.0" style="-fx-background-color: #f1f5f9; -fx-text-fill: #64748b; -fx-background-radius: 8; -fx-cursor: hand;" text="Cancel">
+                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                </Button>
+                <Button onAction="#handleSave" prefWidth="130.0" style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand;" text="Record Vitals">
+                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+</VBox>

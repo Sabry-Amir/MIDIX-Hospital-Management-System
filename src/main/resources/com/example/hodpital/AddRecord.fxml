@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="600.0" spacing="20.0" style="-fx-background-color: white; -fx-padding: 30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hodpital.AddRecordController">
+    <children>
+        <Label style="-fx-font-weight: bold; -fx-font-size: 18;" text="Add Medical Record" />
+
+        <Label text="Vital Signs" style="-fx-font-weight: bold;" />
+        <HBox spacing="15.0">
+            <children>
+                <VBox HBox.hgrow="ALWAYS"><Label text="Blood Pressure"/><TextField fx:id="txtBP" promptText="120/80"/></VBox>
+                <VBox HBox.hgrow="ALWAYS"><Label text="Temperature (°F)"/><TextField fx:id="txtTemp" promptText="98.6"/></VBox>
+                <VBox HBox.hgrow="ALWAYS"><Label text="Heart Rate (bpm)"/><TextField fx:id="txtHR" promptText="72"/></VBox>
+                <VBox HBox.hgrow="ALWAYS"><Label text="Weight (lbs)"/><TextField fx:id="txtWeight" promptText="165"/></VBox>
+            </children>
+        </HBox>
+
+        <VBox spacing="5.0">
+            <Label text="Diagnosis" style="-fx-font-weight: bold;" />
+            <TextArea fx:id="txtDiagnosis" prefHeight="80.0" />
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label text="Prescription" style="-fx-font-weight: bold;" />
+            <TextArea fx:id="txtPrescription" prefHeight="80.0" />
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <Button onAction="#handleCancel" style="-fx-background-color: #f1f5f9;" text="Cancel" />
+            <Button onAction="#handleSave" style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-font-weight: bold;" text="Save Record" />
+        </HBox>
+    </children>
+</VBox>

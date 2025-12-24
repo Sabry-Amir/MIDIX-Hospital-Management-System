@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #f8fafc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hodpital.DoctorController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="75.0" style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox alignment="CENTER_LEFT">
+                    <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 19;" text="Doctor Dashboard" textFill="#1e293b" />
+                        <Label text="Cardiologist" textFill="#64748b" />
+                    </children>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER_RIGHT" spacing="2">
+                    <children>
+                        <Label fx:id="lblDoctorName" style="-fx-font-weight: bold; -fx-font-size: 15;" text="Dr. Sarah Johnson" textFill="#1e293b" />
+                        <Label text="Cardiology" textFill="#3b82f6" style="-fx-font-size: 12;" />
+                    </children>
+                </VBox>
+                <Button onAction="#handleLogout" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-background-radius: 10; -fx-cursor: hand; -fx-font-weight: bold;" text="Logout">
+                    <padding><Insets bottom="10.0" left="20.0" right="20.0" top="10.0" /></padding>
+                    <HBox.margin><Insets left="20.0" /></HBox.margin>
+                    <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-sign-out-alt" />
+                    </graphic>
+                </Button>
+            </children>
+            <padding><Insets left="30.0" right="30.0" /></padding>
+        </HBox>
+
+        <HBox layoutY="100.0" spacing="25.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                            <Label text="My Patients" textFill="#64748b" />
+                            <Label fx:id="lblTotalPatients" style="-fx-font-size: 26; -fx-font-weight: bold;" text="0" />
+                        </VBox>
+                        <StackPane style="-fx-background-color: #eff6ff; -fx-padding: 12; -fx-background-radius: 12;">
+                            <FontIcon iconColor="#3b82f6" iconLiteral="fas-users" iconSize="24" />
+                        </StackPane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                            <Label text="Today's Appointments" textFill="#64748b" />
+                            <Label fx:id="lblTodayAppt" style="-fx-font-size: 26; -fx-font-weight: bold;" text="0" />
+                        </VBox>
+                        <StackPane style="-fx-background-color: #f0fdf4; -fx-padding: 12; -fx-background-radius: 12;">
+                            <FontIcon iconColor="#22c55e" iconLiteral="far-calendar-check" iconSize="24" />
+                        </StackPane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                            <Label text="Medical Records" textFill="#64748b" />
+                            <Label fx:id="lblTotalRecords" style="-fx-font-size: 26; -fx-font-weight: bold;" text="0" />
+                        </VBox>
+                        <StackPane style="-fx-background-color: #f5f3ff; -fx-padding: 12; -fx-background-radius: 12;">
+                            <FontIcon iconColor="#8b5cf6" iconLiteral="fas-file-medical" iconSize="24" />
+                        </StackPane>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+
+        <TabPane layoutX="30.0" layoutY="230.0" prefHeight="460.0" style="-fx-background-color: white; -fx-background-radius: 15;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="230.0">
+            <tabs>
+                <Tab text="Medical Records &amp; Appointments">
+                    <content>
+                        <HBox spacing="20.0">
+                            <children>
+                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 16;" text="Detailed Medical History" />
+                                        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                                            <content>
+                                                <VBox fx:id="pnlMedicalRecords" spacing="15.0" />
+                                            </content>
+                                        </ScrollPane>
+                                    </children>
+                                </VBox>
+                                <VBox maxWidth="400.0" minWidth="380.0" spacing="10.0">
+                                    <children>
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 16;" text="Upcoming Appointments" />
+                                        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                                            <content>
+                                                <VBox fx:id="pnlUpcomingAppt" spacing="12.0" />
+                                            </content>
+                                        </ScrollPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                        </HBox>
+                    </content>
+                </Tab>
+
+                <Tab text="My Patients List">
+                    <content>
+                        <VBox spacing="15.0" style="-fx-padding: 25;">
+                            <children>
+                                <TableView fx:id="tblPatients" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colPatID" prefWidth="120.0" text="Patient ID" />
+                                        <TableColumn fx:id="colPatName" prefWidth="250.0" text="Name" />
+                                        <TableColumn fx:id="colPatAge" prefWidth="100.0" text="Age" />
+                                        <TableColumn fx:id="colPatBlood" prefWidth="120.0" text="Blood Type" />
+                                        <TableColumn fx:id="colPatStatus" prefWidth="150.0" text="Status" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

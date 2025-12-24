@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane fx:id="mainContainer" prefHeight="650.0" prefWidth="986.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hodpital.AdminController">
+    <children>
+
+        <GridPane hgap="20.0" vgap="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.33" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.33" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.33" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Total Patients :"><font><Font size="15.0" /></font></Label>
+                                <Label fx:id="patients_Number" text="0"><font><Font name="System Bold" size="25.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <StackPane>
+                            <children>
+                                <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#1c6bb5" height="50.0" width="50.0" />
+                                <FontIcon iconColor="WHITE" iconLiteral="fas-user-friends" iconSize="30" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Admitted :"><font><Font size="15.0" /></font></Label>
+                                <Label fx:id="Admitted_Patients_Numbre" text="0"><font><Font name="System Bold" size="25.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <StackPane>
+                            <children>
+                                <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#00e539" height="50.0" width="50.0" />
+                                <FontIcon iconColor="WHITE" iconLiteral="fas-procedures" iconSize="30" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Today's Appt :"><font><Font size="15.0" /></font></Label>
+                                <Label fx:id="Todays_Appointments_Numbre" text="0"><font><Font name="System Bold" size="25.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <StackPane>
+                            <children>
+                                <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#ca3acd" height="50.0" width="50.0" />
+                                <FontIcon iconColor="WHITE" iconLiteral="far-calendar-alt" iconSize="30" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Occupied Rooms :"><font><Font size="15.0" /></font></Label>
+                                <Label fx:id="lblOccupiedRooms" text="0/0"><font><Font name="System Bold" size="25.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <StackPane>
+                            <children>
+                                <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#f54018" height="50.0" width="50.0" />
+                                <FontIcon iconColor="WHITE" iconLiteral="fas-bed" iconSize="30" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Revenue :"><font><Font size="15.0" /></font></Label>
+                                <Label fx:id="lblTotalRevenue" text="0.0"><font><Font name="System Bold" size="25.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <StackPane>
+                            <children>
+                                <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#1db28c" height="50.0" width="50.0" />
+                                <FontIcon iconColor="WHITE" iconLiteral="fas-dollar-sign" iconSize="30" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Low Stock :"><font><Font size="15.0" /></font></Label>
+                                <Label fx:id="lblLowStock" text="0"><font><Font name="System Bold" size="25.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <StackPane>
+                            <children>
+                                <Rectangle arcHeight="15.0" arcWidth="15.0" fill="RED" height="50.0" width="50.0" />
+                                <FontIcon iconColor="WHITE" iconLiteral="fas-exclamation-triangle" iconSize="30" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+
+            </children>
+        </GridPane>
+
+        <HBox layoutY="300.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="280.0">
+            <children>
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 15;" HBox.hgrow="ALWAYS">
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <Label text="Recent Appointments" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0">
+                            <font><Font name="Arial Bold" size="18.0" /></font>
+                        </Label>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                            <content>
+                                <VBox fx:id="pnlRecentAppointments" spacing="10.0" style="-fx-background-color: white;" />
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 15;" HBox.hgrow="ALWAYS">
+                    <effect><DropShadow><color><Color opacity="0.15" /></color></DropShadow></effect>
+                    <children>
+                        <Label text="Recent Patients" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0">
+                            <font><Font name="Arial Bold" size="18.0" /></font>
+                        </Label>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                            <content>
+                                <VBox fx:id="pnlRecentPatients" spacing="10.0" style="-fx-background-color: white;" />
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+
+    </children>
+</AnchorPane>

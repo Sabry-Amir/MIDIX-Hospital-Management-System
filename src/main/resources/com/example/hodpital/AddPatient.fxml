@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<StackPane style="-fx-background-color: transparent; -fx-padding: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hodpital.AddPatientController">
+    <children>
+        <AnchorPane prefHeight="480.0" prefWidth="750.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15;">
+            <effect>
+                <DropShadow height="40.0" radius="19.5" width="40.0">
+                    <color><Color opacity="0.3" /></color>
+                </DropShadow>
+            </effect>
+            <children>
+                <VBox layoutX="30.0" layoutY="30.0" spacing="15.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                    <children>
+                        <Label fx:id="lblHeader" text="Patient Details" textFill="#1f2937">
+                            <font><Font name="Arial Bold" size="22.0" /></font>
+                        </Label>
+
+                        <GridPane hgap="15.0" vgap="15.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="33.3" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+
+                                <VBox spacing="5.0" GridPane.columnSpan="2">
+                                    <children>
+                                        <Label text="Full Name" textFill="#6b7280" />
+                                        <TextField fx:id="txtName" prefHeight="35.0" style="-fx-background-radius: 5; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="5.0" GridPane.columnIndex="2">
+                                    <children>
+                                        <Label text="Gender" textFill="#6b7280" />
+                                        <ComboBox fx:id="cbGender" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="5.0" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Phone Number" textFill="#6b7280" />
+                                        <TextField fx:id="txtPhone" prefHeight="35.0" style="-fx-background-radius: 5; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Date of Birth" textFill="#6b7280" />
+                                        <DatePicker fx:id="dpDOB" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: transparent;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Status" textFill="#6b7280" />
+                                        <ComboBox fx:id="cbStatus" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="5.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                                    <children>
+                                        <Label text="Address" textFill="#6b7280" />
+                                        <TextField fx:id="txtAddress" prefHeight="35.0" style="-fx-background-radius: 5; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="5.0" GridPane.rowIndex="3">
+                                    <children>
+                                        <Label text="Emergency Contact" textFill="#6b7280" />
+                                        <TextField fx:id="txtEmergName" promptText="Contact Name" prefHeight="35.0" style="-fx-background-radius: 5; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <children>
+                                        <Label text="Emergency Phone" textFill="#6b7280" />
+                                        <TextField fx:id="txtEmergPhone" promptText="Contact Phone" prefHeight="35.0" style="-fx-background-radius: 5; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                    <children>
+                                        <Label text="Blood Type" textFill="#6b7280" />
+                                        <ComboBox fx:id="cbBlood" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: #d1d5db; -fx-border-radius: 5;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </GridPane>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#closeWindow" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: white; -fx-border-color: #e5e7eb; -fx-border-radius: 8; -fx-cursor: hand;" text="Cancel" textFill="#6b7280">
+                                    <font><Font name="Arial Bold" size="14.0" /></font>
+                                </Button>
+                                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#savePatient" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #4f46e5; -fx-background-radius: 8; -fx-cursor: hand;" text="Save Patient" textFill="WHITE">
+                                    <font><Font name="Arial Bold" size="14.0" /></font>
+                                </Button>
+                            </children>
+                            <VBox.margin><Insets top="10.0" /></VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="600.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hodpital.RegisterPatientController">
+    <children>
+        <VBox spacing="5.0">
+            <children>
+                <Label text="Register New Patient" style="-fx-font-weight: bold; -fx-font-size: 20; -fx-text-fill: #1e293b;" />
+                <Label text="Please fill in the patient's information accurately." textFill="#64748b" />
+            </children>
+        </VBox>
+        <Separator />
+        <GridPane hgap="20.0" vgap="15.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+            </columnConstraints>
+            <children>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Full Name" textFill="#475569" style="-fx-font-weight: bold;" />
+                        <TextField fx:id="txtName" promptText="e.g. Robert Smith" style="-fx-background-radius: 8; -fx-padding: 10; -fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 8;" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="Phone Number" textFill="#475569" style="-fx-font-weight: bold;" />
+                        <TextField fx:id="txtPhone" promptText="+1 234..." style="-fx-background-radius: 8; -fx-padding: 10; -fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-radius: 8;" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Date of Birth" textFill="#475569" style="-fx-font-weight: bold;" />
+                        <DatePicker fx:id="dpDOB" maxWidth="Infinity" style="-fx-background-color: #f8fafc;" />
+                    </children>
+                </VBox>
+                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="Gender" textFill="#475569" style="-fx-font-weight: bold;" />
+                        <ComboBox fx:id="comboGender" maxWidth="Infinity" promptText="Select Gender" style="-fx-background-color: #f8fafc;" />
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+        <VBox spacing="5.0">
+            <children>
+                <Label text="Allergies" textFill="#ef4444" style="-fx-font-weight: bold;" />
+                <TextArea fx:id="txtAllergies" prefHeight="80.0" promptText="Enter allergies if any..." style="-fx-background-radius: 8; -fx-padding: 10; -fx-background-color: #fff1f2; -fx-border-color: #fecaca; -fx-border-radius: 8;" wrapText="true" />
+            </children>
+        </VBox>
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <children>
+                <Button onAction="#handleCancel" prefWidth="100.0" style="-fx-background-color: #f1f5f9; -fx-text-fill: #64748b; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand;" text="Cancel">
+                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                </Button>
+                <Button onAction="#handleSave" prefWidth="150.0" style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-cursor: hand;" text="Register Patient">
+                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+</VBox>
